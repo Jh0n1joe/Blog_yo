@@ -3,7 +3,7 @@
 {% block content %}
     {% for post in post_list %}  
             <ul>
-                <li><a href="">{{ post.title }}</a></li>
+                <li><a href="{% url 'post_detail'  post.pk %} ">{{ post.title }}</a></li> <!-- post.pk es para acceder a la informacion de cada post a traves de la primary key. -->
             </ul>
     {% endfor %}
 {% endblock content %}
