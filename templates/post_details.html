@@ -1,6 +1,12 @@
 {% extends "_base.html" %}
 
 {% block content %}
-    <h2>{{post.title}}</h2>
-    <p>{{post.body}}</p>
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.body }}</p>
+
+aqui esta el error:
+
+    <a href="{% url 'post_update' post.pk %}">Edit</a> 
+    <a href="{% url 'post_delete' post.pk %}">Delete</a>
+
 {% endblock content %}
