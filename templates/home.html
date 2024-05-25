@@ -1,6 +1,14 @@
 {% extends "_base.html" %}
 
 {% block content %}
+    {% if user.is_authenticated %}
+         hola {{ user.username }}!! :)
+         <p><a href="{% url 'login' %}">Log Out</a></p>
+    {% else %}
+        <p>No estas registrado</p>
+        <a href="{% url 'login'  %}">Log In</a>
+    {% endif %}
+
     {% for post in post_list %}  
             <ul>
                 <li><a href="{% url 'post_detail'  post.pk %} ">{{ post.title }}</a></li> <!-- post.pk es para acceder a la informacion de cada post a traves de la primary key. -->
